@@ -1,0 +1,177 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f1117;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  background: #1a1d27;
+  border-bottom: 1px solid #2a2d3e;
+}
+
+.logo { font-size: 1.4rem; font-weight: 700; color: #00e5ff; letter-spacing: 1px; }
+
+.header-right { display: flex; gap: 16px; align-items: center; font-size: 0.9rem; color: #aaa; }
+
+.live-badge {
+  background: #1a3a2a;
+  color: #00e676;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 28px 32px 0;
+}
+
+.card {
+  background: #1a1d27;
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #2a2d3e;
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.card-icon { font-size: 2rem; }
+
+.card-info p { font-size: 0.8rem; color: #888; margin-bottom: 4px; }
+
+.card-info h2 { font-size: 1.3rem; font-weight: 700; }
+
+.card.green  .card-info h2 { color: #00e676; }
+.card.blue   .card-info h2 { color: #00b0ff; }
+.card.orange .card-info h2 { color: #ff9100; }
+.card.purple .card-info h2 { color: #e040fb; }
+
+/* CHARTS */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 24px 32px 0;
+}
+
+.chart-box {
+  background: #1a1d27;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #2a2d3e;
+}
+
+.chart-box.wide {
+  grid-column: span 2;
+}
+
+.chart-box h3 { font-size: 0.95rem; margin-bottom: 18px; color: #ccc; }
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.chart-header h3 { margin-bottom: 0; }
+
+.toggle-btns { display: flex; gap: 8px; }
+
+.toggle-btn {
+  background: #12151f;
+  color: #888;
+  border: 1px solid #2a2d3e;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active {
+  background: #00e5ff;
+  color: #000;
+  border-color: #00e5ff;
+  font-weight: 600;
+}
+
+/* ALERTS */
+.alerts-box { overflow-y: auto; max-height: 340px; }
+
+.alert-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.alert-item.critical { background: #2a1a1a; border-left: 4px solid #ff5252; }
+.alert-item.warning  { background: #2a2a1a; border-left: 4px solid #ffd740; }
+.alert-item.info     { background: #1a2a2a; border-left: 4px solid #00e5ff; }
+
+.alert-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+.alert-msg   { font-size: 0.8rem; color: #888; }
+
+/* GOALS */
+.goal-bar-wrap { margin-top: 12px; }
+.goal-label { display: flex; justify-content: space-between; font-size: 0.85rem; color: #aaa; margin-bottom: 8px; }
+.goal-bar { background: #12151f; border-radius: 20px; height: 12px; overflow: hidden; }
+.goal-bar-fill { height: 100%; background: linear-gradient(90deg, #00e676, #00e5ff); border-radius: 20px; transition: width 1s; }
+.goal-savings { margin-top: 16px; font-size: 0.9rem; color: #00e676; font-weight: 600; }
+
+/* TIPS */
+.tips-box { overflow-y: auto; max-height: 340px; }
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px;
+  background: #12151f;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border-left: 4px solid #00e5ff;
+}
+
+.tip-icon { font-size: 1.5rem; }
+.tip-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+.tip-saving { font-size: 0.82rem; color: #888; }
+
+.tip-priority {
+  margin-left: auto;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.priority-High   { background: #3a1a1a; color: #ff5252; }
+.priority-Medium { background: #2a2a1a; color: #ffd740; }
+.priority-Low    { background: #1a2a1a; color: #69f0ae; }
+
+footer {
+  text-align: center;
+  padding: 28px;
+  color: #444;
+  font-size: 0.8rem;
+  margin-top: 28px;
+}

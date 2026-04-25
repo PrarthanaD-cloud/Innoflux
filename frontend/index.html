@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⚡ Smart Energy Dashboard</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">⚡ EnergyIQ</div>
+    <div class="header-right">
+      <span class="live-badge">🟢 Live</span>
+      <span class="date" id="currentDate"></span>
+    </div>
+  </header>
+
+  <!-- SUMMARY CARDS -->
+  <section class="cards">
+    <div class="card green">
+      <div class="card-icon">⚡</div>
+      <div class="card-info">
+        <p>Today's Usage</p>
+        <h2 id="todayKwh">-- kWh</h2>
+      </div>
+    </div>
+    <div class="card blue">
+      <div class="card-icon">💰</div>
+      <div class="card-info">
+        <p>Monthly Bill</p>
+        <h2 id="bill">--</h2>
+      </div>
+    </div>
+    <div class="card orange">
+      <div class="card-icon">📈</div>
+      <div class="card-info">
+        <p>vs Last Week</p>
+        <h2 id="delta">--%</h2>
+      </div>
+    </div>
+    <div class="card purple">
+      <div class="card-icon">🏆</div>
+      <div class="card-info">
+        <p>Efficiency Score</p>
+        <h2 id="score">--</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREND CHART -->
+  <section class="charts-row">
+    <div class="chart-box wide">
+      <div class="chart-header">
+        <h3>📅 Consumption Trend</h3>
+        <div class="toggle-btns">
+          <button class="toggle-btn active" onclick="loadTrend('day')">Day</button>
+          <button class="toggle-btn" onclick="loadTrend('week')">Week</button>
+          <button class="toggle-btn" onclick="loadTrend('month')">Month</button>
+        </div>
+      </div>
+      <canvas id="trendChart"></canvas>
+    </div>
+  </section>
+
+  <!-- APPLIANCES + ALERTS -->
+  <section class="charts-row">
+    <div class="chart-box">
+      <h3>🔌 Appliance Breakdown</h3>
+      <canvas id="applianceChart"></canvas>
+    </div>
+    <div class="chart-box alerts-box">
+      <h3>🚨 Smart Alerts</h3>
+      <div id="alertsList"></div>
+    </div>
+  </section>
+
+  <!-- GOALS + TIPS -->
+  <section class="charts-row">
+    <div class="chart-box">
+      <h3>🎯 Energy Goals</h3>
+      <div id="goalsSection"></div>
+    </div>
+    <div class="chart-box tips-box">
+      <h3>💡 AI Optimization Tips</h3>
+      <div id="tipsList"></div>
+    </div>
+  </section>
+
+  <footer>Built with ⚡ EnergyIQ Dashboard © 2025</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
